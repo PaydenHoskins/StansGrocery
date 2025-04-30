@@ -26,7 +26,6 @@ Partial Class StansGroceryForm
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.FilterComboBox = New System.Windows.Forms.ComboBox()
-        Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.DisplayLabel = New System.Windows.Forms.Label()
         Me.FilterGroupBox = New System.Windows.Forms.GroupBox()
         Me.FilterByAisleRadioButton = New System.Windows.Forms.RadioButton()
@@ -41,6 +40,7 @@ Partial Class StansGroceryForm
         Me.SearchToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.TopMenuStrip.SuspendLayout()
         Me.ContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -68,14 +68,6 @@ Partial Class StansGroceryForm
         Me.FilterComboBox.Name = "FilterComboBox"
         Me.FilterComboBox.Size = New System.Drawing.Size(240, 21)
         Me.FilterComboBox.TabIndex = 2
-        '
-        'DisplayListBox
-        '
-        Me.DisplayListBox.FormattingEnabled = True
-        Me.DisplayListBox.Location = New System.Drawing.Point(469, 57)
-        Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(319, 199)
-        Me.DisplayListBox.TabIndex = 3
         '
         'DisplayLabel
         '
@@ -136,13 +128,13 @@ Partial Class StansGroceryForm
         'SearchToolStripMenuItem
         '
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
         Me.SearchToolStripMenuItem.Text = "Search"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -155,7 +147,7 @@ Partial Class StansGroceryForm
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'ContextMenuStrip
@@ -175,6 +167,16 @@ Partial Class StansGroceryForm
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(109, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
+        '
+        'DisplayListBox
+        '
+        Me.DisplayListBox.Font = New System.Drawing.Font("MS UI Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DisplayListBox.FormattingEnabled = True
+        Me.DisplayListBox.ItemHeight = 11
+        Me.DisplayListBox.Location = New System.Drawing.Point(469, 57)
+        Me.DisplayListBox.Name = "DisplayListBox"
+        Me.DisplayListBox.Size = New System.Drawing.Size(319, 191)
+        Me.DisplayListBox.TabIndex = 3
         '
         'StansGroceryForm
         '
@@ -205,7 +207,6 @@ Partial Class StansGroceryForm
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents SearchButton As Button
     Friend WithEvents FilterComboBox As ComboBox
-    Friend WithEvents DisplayListBox As ListBox
     Friend WithEvents DisplayLabel As Label
     Friend WithEvents FilterGroupBox As GroupBox
     Friend WithEvents FilterByAisleRadioButton As RadioButton
@@ -220,4 +221,5 @@ Partial Class StansGroceryForm
     Friend WithEvents SearchToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents MainToolTip As ToolTip
+    Friend WithEvents DisplayListBox As ListBox
 End Class
