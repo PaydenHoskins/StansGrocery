@@ -57,6 +57,7 @@ Public Class StansGroceryForm
     End Function
     Sub DisplayData()
         Dim items(,) As String = ItemArray()
+        DisplayListBox.Items.Clear()
         If items IsNot Nothing Then
             For i = 0 To items.GetUpperBound(0) 'UBound(_customers)
                 If items(i, 0) <> "" Then
@@ -150,7 +151,9 @@ Public Class StansGroceryForm
                     If items(i, 1) = $"{CStr(FilterComboBox.SelectedItem)}" Then
                         DisplayListBox.Items.Add($"{items(i, 0)}")
                     ElseIf $"{CStr(FilterComboBox.SelectedItem)}" = "Show all" Then
-                        DisplayData()
+                        If items(i, 0) <> "" Then
+                            DisplayListBox.Items.Add($"{items(i, 0)}")
+                        End If
                     End If
                 Next
             End If
@@ -161,7 +164,9 @@ Public Class StansGroceryForm
                     If items(i, 2) = $"{CStr(FilterComboBox.SelectedItem)}" Then
                         DisplayListBox.Items.Add($"{items(i, 0)}")
                     ElseIf $"{CStr(FilterComboBox.SelectedItem)}" = "Show all" Then
-                        DisplayData()
+                        If items(i, 0) <> "" Then
+                            DisplayListBox.Items.Add($"{items(i, 0)}")
+                        End If
                     End If
                 Next
             End If
