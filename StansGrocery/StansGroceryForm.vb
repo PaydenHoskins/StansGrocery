@@ -6,7 +6,6 @@ Public Class StansGroceryForm
         Dim fileNumber As Integer = FreeFile()
         Dim currentRecord As String = ""
         Dim InvalidFileName As Boolean = True
-        Dim list As String(,)
         Dim currentIndex(ListOfGrocery(filePath), 2) As String
         Dim currentRow As Integer = 0
         Do
