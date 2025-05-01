@@ -61,7 +61,6 @@ Public Class StansGroceryForm
             For i = 0 To items.GetUpperBound(0) 'UBound(_customers)
                 If items(i, 0) <> "" Then
                     DisplayListBox.Items.Add($"{items(i, 0)}")
-                    DisplayListBox.SelectedIndex() = 0
                 End If
             Next
         End If
@@ -78,7 +77,8 @@ Public Class StansGroceryForm
     Private Sub StansGroceryForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         ReadFromFile()
         DisplayData()
-        FilterByCategoryRadioButton.Checked = True
+        FilterComboBox.Items.Add("Show All")
+        FilterByCategoryRadioButton.Checked = False
         FilterByAisleRadioButton.Checked = False
     End Sub
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -133,6 +133,9 @@ Public Class StansGroceryForm
                 FilterComboBox.Items.Add("Office supplies")
                 FilterComboBox.Items.Add("Other stuff")
             End If
+        ElseIf FilterByAisleRadioButton.Checked = False And FilterByCategoryRadioButton.Checked = False Then
+            FilterComboBox.Items.Clear()
+            FilterComboBox.Items.Add("Show All")
         End If
     End Sub
     Private Sub FilterComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FilterComboBox.SelectedIndexChanged
@@ -156,22 +159,38 @@ Public Class StansGroceryForm
                     End If
                 Next
             End If
+        ElseIf FilterByAisleRadioButton.Checked = False And FilterByCategoryRadioButton.Checked = False Then
+            DisplayData()
         End If
     End Sub
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
-        FilterByCategoryRadioButton.Checked = True
+        FilterByCategoryRadioButton.Checked = False
         FilterByAisleRadioButton.Checked = False
         SearchTextBox.Text = ""
         DisplayListBox.Items.Clear()
         DisplayData()
+        DisplayLabel.Text = ""
     End Sub
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
         Dim items(,) As String = ItemArray()
+        If SearchTextBox.Text = "zzz" Then
+            Me.Close()
+        End If
         If items IsNot Nothing Then
             DisplayListBox.Items.Clear()
             For i = 0 To items.GetUpperBound(0) 'UBound(_customers)
                 If InStr(items(i, 0), SearchTextBox.Text) Then
                     DisplayListBox.Items.Add($"{items(i, 0)}")
+                End If
+            Next
+        End If
+    End Sub
+    Private Sub DisplayListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DisplayListBox.SelectedIndexChanged
+        Dim items(,) As String = ItemArray()
+        If items IsNot Nothing Then
+            For i = 0 To items.GetUpperBound(0) 'UBound(_customers)
+                If InStr(items(i, 0), CStr(DisplayListBox.SelectedItem)) Then
+                    DisplayLabel.Text = ($"{items(i, 0)} is found on {items(i, 1)} with the {items(i, 2)}")
                 End If
             Next
         End If

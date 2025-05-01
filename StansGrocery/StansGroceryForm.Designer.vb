@@ -28,6 +28,7 @@ Partial Class StansGroceryForm
         Me.FilterComboBox = New System.Windows.Forms.ComboBox()
         Me.DisplayLabel = New System.Windows.Forms.Label()
         Me.FilterGroupBox = New System.Windows.Forms.GroupBox()
+        Me.ResetButton = New System.Windows.Forms.Button()
         Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.FilterByCategoryRadioButton = New System.Windows.Forms.RadioButton()
         Me.FilterByAisleRadioButton = New System.Windows.Forms.RadioButton()
@@ -41,7 +42,6 @@ Partial Class StansGroceryForm
         Me.SearchToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ResetButton = New System.Windows.Forms.Button()
         Me.FilterGroupBox.SuspendLayout()
         Me.TopMenuStrip.SuspendLayout()
         Me.ContextMenuStrip.SuspendLayout()
@@ -49,9 +49,9 @@ Partial Class StansGroceryForm
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(447, 8)
+        Me.SearchTextBox.Location = New System.Drawing.Point(513, 8)
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(260, 20)
+        Me.SearchTextBox.Size = New System.Drawing.Size(194, 20)
         Me.SearchTextBox.TabIndex = 0
         '
         'SearchButton
@@ -74,11 +74,11 @@ Partial Class StansGroceryForm
         'DisplayLabel
         '
         Me.DisplayLabel.AutoSize = True
-        Me.DisplayLabel.Location = New System.Drawing.Point(398, 18)
+        Me.DisplayLabel.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DisplayLabel.Location = New System.Drawing.Point(175, 280)
         Me.DisplayLabel.Name = "DisplayLabel"
-        Me.DisplayLabel.Size = New System.Drawing.Size(43, 13)
+        Me.DisplayLabel.Size = New System.Drawing.Size(0, 15)
         Me.DisplayLabel.TabIndex = 4
-        Me.DisplayLabel.Text = "Catalog"
         '
         'FilterGroupBox
         '
@@ -97,14 +97,23 @@ Partial Class StansGroceryForm
         Me.FilterGroupBox.TabStop = False
         Me.FilterGroupBox.Text = "FilterGroupBox"
         '
+        'ResetButton
+        '
+        Me.ResetButton.Location = New System.Drawing.Point(12, 353)
+        Me.ResetButton.Name = "ResetButton"
+        Me.ResetButton.Size = New System.Drawing.Size(105, 58)
+        Me.ResetButton.TabIndex = 8
+        Me.ResetButton.Text = "Reset"
+        Me.ResetButton.UseVisualStyleBackColor = True
+        '
         'DisplayListBox
         '
         Me.DisplayListBox.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DisplayListBox.FormattingEnabled = True
         Me.DisplayListBox.ItemHeight = 14
-        Me.DisplayListBox.Location = New System.Drawing.Point(401, 34)
+        Me.DisplayListBox.Location = New System.Drawing.Point(513, 34)
         Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(387, 200)
+        Me.DisplayListBox.Size = New System.Drawing.Size(275, 200)
         Me.DisplayListBox.TabIndex = 3
         '
         'FilterByCategoryRadioButton
@@ -187,15 +196,6 @@ Partial Class StansGroceryForm
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(109, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
-        '
-        'ResetButton
-        '
-        Me.ResetButton.Location = New System.Drawing.Point(12, 353)
-        Me.ResetButton.Name = "ResetButton"
-        Me.ResetButton.Size = New System.Drawing.Size(105, 58)
-        Me.ResetButton.TabIndex = 8
-        Me.ResetButton.Text = "Reset"
-        Me.ResetButton.UseVisualStyleBackColor = True
         '
         'StansGroceryForm
         '
