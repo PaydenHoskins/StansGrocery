@@ -88,6 +88,7 @@ Public Class StansGroceryForm
         Dim items(,) As String = ItemArray()
         If FilterByAisleRadioButton.Checked Then
             FilterComboBox.Items.Clear()
+            FilterComboBox.Items.Add("Show all")
             FilterComboBox.Items.Add("Aisle ")
             FilterComboBox.Items.Add("Aisle 1")
             FilterComboBox.Items.Add("Aisle 2")
@@ -109,33 +110,34 @@ Public Class StansGroceryForm
         ElseIf FilterByCategoryRadioButton.Checked Then
             FilterComboBox.Items.Clear()
             If items IsNot Nothing Then
+                FilterComboBox.Items.Add("Show all")
+                FilterComboBox.Items.Add("Baby stuff")
+                FilterComboBox.Items.Add("Baking")
+                FilterComboBox.Items.Add("Baked goods")
+                FilterComboBox.Items.Add("Beverages")
+                FilterComboBox.Items.Add("Canned foods")
+                FilterComboBox.Items.Add("Cheese")
+                FilterComboBox.Items.Add("Cleaning products")
+                FilterComboBox.Items.Add("Condiments / Sauces")
+                FilterComboBox.Items.Add("Dairy")
                 FilterComboBox.Items.Add("Fresh Fruit")
                 FilterComboBox.Items.Add("Frozen")
-                FilterComboBox.Items.Add("Condiments / Sauces")
-                FilterComboBox.Items.Add("Various groceries")
-                FilterComboBox.Items.Add("Canned foods")
-                FilterComboBox.Items.Add("Spices & herbs")
-                FilterComboBox.Items.Add("Dairy")
-                FilterComboBox.Items.Add("Cheese")
-                FilterComboBox.Items.Add("Meat")
-                FilterComboBox.Items.Add("Seafood")
-                FilterComboBox.Items.Add("Beverages")
-                FilterComboBox.Items.Add("Baked goods")
-                FilterComboBox.Items.Add("Baking")
-                FilterComboBox.Items.Add("Snacks")
-                FilterComboBox.Items.Add("Themed meals")
-                FilterComboBox.Items.Add("Baby stuff")
-                FilterComboBox.Items.Add("Pets")
-                FilterComboBox.Items.Add("Personal care")
-                FilterComboBox.Items.Add("Pharmacy")
                 FilterComboBox.Items.Add("Kitchen")
-                FilterComboBox.Items.Add("Cleaning products")
+                FilterComboBox.Items.Add("Meat")
                 FilterComboBox.Items.Add("Office supplies")
                 FilterComboBox.Items.Add("Other stuff")
+                FilterComboBox.Items.Add("Personal care")
+                FilterComboBox.Items.Add("Pets")
+                FilterComboBox.Items.Add("Pharmacy")
+                FilterComboBox.Items.Add("Seafood")
+                FilterComboBox.Items.Add("Snacks")
+                FilterComboBox.Items.Add("Spices & herbs")
+                FilterComboBox.Items.Add("Themed meals")
+                FilterComboBox.Items.Add("Various groceries")
             End If
         ElseIf FilterByAisleRadioButton.Checked = False And FilterByCategoryRadioButton.Checked = False Then
             FilterComboBox.Items.Clear()
-            FilterComboBox.Items.Add("Show All")
+            FilterComboBox.Items.Add("Show all")
         End If
     End Sub
     Private Sub FilterComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FilterComboBox.SelectedIndexChanged
@@ -147,6 +149,8 @@ Public Class StansGroceryForm
                 For i = 0 To items.GetUpperBound(0) 'UBound(_customers)
                     If items(i, 1) = $"{CStr(FilterComboBox.SelectedItem)}" Then
                         DisplayListBox.Items.Add($"{items(i, 0)}")
+                    ElseIf $"{CStr(FilterComboBox.SelectedItem)}" = "Show all" Then
+                        DisplayData()
                     End If
                 Next
             End If
@@ -156,6 +160,8 @@ Public Class StansGroceryForm
                 For i = 0 To items.GetUpperBound(0) 'UBound(_customers)
                     If items(i, 2) = $"{CStr(FilterComboBox.SelectedItem)}" Then
                         DisplayListBox.Items.Add($"{items(i, 0)}")
+                    ElseIf $"{CStr(FilterComboBox.SelectedItem)}" = "Show all" Then
+                        DisplayData()
                     End If
                 Next
             End If
