@@ -2,7 +2,7 @@
 
 Public Class StansGroceryForm
     Sub ReadFromFile()
-        Dim filePath As String = "Grocery.txt"
+        Dim filePath As String = "..\..\Grocery.txt"
         Dim fileNumber As Integer = FreeFile()
         Dim currentRecord As String = ""
         Dim InvalidFileName As Boolean = True
